@@ -21,7 +21,6 @@ public class AdminController {
     @GetMapping
     public String admin(Model model, Principal principal) {
         model.addAttribute("admin", us.getUserByEmail(principal.getName()));
-        model.addAttribute("allRoles", Arrays.asList("ADMIN", "USER"));
         model.addAttribute("users", us.getAllUsers());
         model.addAttribute("newUser", new User());
         return "admin";
