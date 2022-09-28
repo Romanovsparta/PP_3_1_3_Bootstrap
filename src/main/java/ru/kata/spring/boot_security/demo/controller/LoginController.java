@@ -9,8 +9,13 @@ import org.springframework.web.servlet.view.RedirectView;
 @RequestMapping("/")
 public class LoginController {
 
+    @GetMapping("/")
+    public String login() {
+        return "login";
+    }
+
     @GetMapping("/login")
-    public RedirectView redirectWithUsingRedirectView() {
+    public RedirectView redirect() {
         return new RedirectView("/");
     }
 }
